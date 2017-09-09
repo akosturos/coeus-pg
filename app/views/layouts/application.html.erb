@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %> </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= render 'layouts/shim' %>
+    <link rel="shortcut icon" href="/assets/favicons/coeus32.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400i,500i|Open+Sans:300,400" rel="stylesheet">
+  <script src="//use.edgefonts.net/actor;source-sans-pro;istok-web.js"></script>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
+

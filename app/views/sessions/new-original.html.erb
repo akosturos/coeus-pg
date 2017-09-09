@@ -1,0 +1,39 @@
+<% provide(:title, "Log in") %>
+  <div class="banner-img-div-600">
+    <img src="/assets/investor.jpg" alt="Investor image:" class="banner-img">
+    <div class="login-gray-translucent mt-150">
+      <div class="div-95cp " id="loginbox2div">
+        <h1 class="ft-34 form-label"><b><i>COEUS</i></b> Portal</h1>
+        <div class="div-95cp loginbox pb-10">
+          <%= form_for(:session, url: login_path) do |f| %>
+          <div class="div-85cp bgt">
+            <div class="div-35 bgt">
+              <%= f.label :email, class: 'form-label pr-10' %>
+            </div>
+            <div class="div-65 bgt">
+              <%= f.email_field :email, class: 'form-control bshadow' %>
+            </div>
+          </div>
+          <div class="div-85cp bgt pt-20">
+            <div class="div-35 bgt">
+                <%= f.label :password,  class: "pr-10"%>
+            </div>
+            <div class="div-65 bgt">
+                <%= f.password_field :password, class: 'form-control bshadow' %>
+            </div>
+          </div>
+          <div class="bgt div-50cp pt-30">
+            <%= f.label :remember_me, class: "checkbox inline rm rememberMe-div" do %>
+            <span class="rememberMe-txt" style="font-size: 90%">Remember me on this computer</span>
+            <%= f.check_box :remember_me, class: "rememberMe-div" %>
+          </div>
+
+          <% end %>
+          <div class="div-80cp bgt pb-15">
+          <%= f.submit "Login", class: "btn btn-primary btn-login login-button" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  <div>

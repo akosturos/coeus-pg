@@ -1,0 +1,57 @@
+<header class="nav-color">
+    <nav class="navbar navbar-toggleable-md navbar-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a id="nav-coeus-new" class="navbar-brand" href="/">COEUS
+      <img src="/assets/coeus.png" id="main-logo">
+      </a>
+
+      <div class="collapse navbar-collapse navbar-inverse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto" id="ul-rmargin">
+            <li class="nav-item <%= 'active' if request.path == '/' %> nav-color">
+                <%= link_to "home", root_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item nav-color">
+                <%= link_to "tech", root_path(anchor: 'technology'), class: 'nav-link' %>
+            </li>
+            <li class="nav-item <%= 'active' if request.path == '/team' %> nav-color">
+                <%= link_to "team", team_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item <%= 'active' if request.path == '/projects' %> nav-color">
+                <%= link_to "projects", projects_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item <%= 'active' if request.path == '/contact' %> nav-color">
+                <%= link_to "contact", contact_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item <%= 'active' if request.path == '/login' %> nav-color last-nav-link">
+                <%= link_to "login", login_path, class: 'nav-link' %>
+        </ul>
+      </div>
+    </nav>
+    <div id="appear-nav">
+        <ul class="appear-nav-ul">
+            <li class="appear-nav-li appear-nav-left"><a  id="appear-home" href="/">home</a></li>
+            <li class="appear-nav-li appear-nav-left"><a id="appear-tech" href="/#technology">tech</a></li>
+            <li class="appear-nav-li appear-nav-left"><%= link_to "team", team_path %></li>
+            <li class="appear-nav-li pl-0px pr-0px"><a href="/"><img src="/assets/coeus.png" id="appear-logo"></a></li>
+            <li class="appear-nav-li appear-nav-right"><%= link_to "projects", projects_path %></li>
+           <%# <li><%= link_to "news", about_path %><%#</li>%>
+            <li class="appear-nav-li appear-nav-right"><%= link_to "contact", contact_path %></li>
+            <% if logged_in? %>
+            <li class="appear-nav-li"><%= link_to "Users", users_path %></li>
+                <li class="dropdown appear-nav-left">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><%= link_to "Profile", current_user %></li>
+                            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                            <li class="divider">(divider)</li>
+                            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+                        </ul>
+                </li>
+            <% else %>
+                <li class="appear-nav-li appear-nav-right"><%= link_to "login", login_path %></li>
+            <% end %>
+        </ul>
+    </div>
+</header>
