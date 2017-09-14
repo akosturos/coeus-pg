@@ -3,7 +3,8 @@ gem 'rails',              '~>5.0.1'
 gem 'pg',                 '~> 0.18'
 gem 'bootstrap-sass',     '3.3.7'
 gem 'bcrypt',             '3.1.11'
-gem 'puma',               '3.4.0'
+gem 'puma'
+gem 'figaro'
 gem 'sass-rails',         '5.0.6'
 gem 'uglifier',           '3.0.0'
 gem 'coffee-rails',       '4.2.1'
@@ -13,7 +14,11 @@ gem 'jbuilder',           '2.4.1'
 gem 'faker',              '1.7.3' # move to development
 gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
-
+gem 'capistrano'
+gem 'capistrano3-puma'
+gem 'capistrano-rails', require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rvm'
 
 
 group :development, :test do
